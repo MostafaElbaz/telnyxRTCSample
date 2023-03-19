@@ -20,6 +20,7 @@
 		814F8BD529C3B1AD0097218D /* TelnyxSampleUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 814F8BD429C3B1AD0097218D /* TelnyxSampleUITestsLaunchTests.swift */; };
 		814F8BE229C3B1F50097218D /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 814F8BE129C3B1F40097218D /* LoginViewController.swift */; };
 		814F8BE529C3B21F0097218D /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 814F8BE429C3B21F0097218D /* LoginViewModel.swift */; };
+		814F8BE729C3BAE10097218D /* TelnyxClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 814F8BE629C3BAE10097218D /* TelnyxClient.swift */; };
 		F1A6BFAFB48D1E1309F80F74 /* Pods_TelnyxSampleTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6C039ECBC5200758D4B90B39 /* Pods_TelnyxSampleTests.framework */; };
 /* End PBXBuildFile section */
 
@@ -64,6 +65,7 @@
 		814F8BD429C3B1AD0097218D /* TelnyxSampleUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TelnyxSampleUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		814F8BE129C3B1F40097218D /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		814F8BE429C3B21F0097218D /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
+		814F8BE629C3BAE10097218D /* TelnyxClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TelnyxClient.swift; sourceTree = "<group>"; };
 		BD50C2FF743A8AA131539D66 /* Pods-TelnyxSample-TelnyxSampleUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TelnyxSample-TelnyxSampleUITests.release.xcconfig"; path = "Target Support Files/Pods-TelnyxSample-TelnyxSampleUITests/Pods-TelnyxSample-TelnyxSampleUITests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -129,6 +131,7 @@
 				814F8BBC29C3B1AD0097218D /* LaunchScreen.storyboard */,
 				814F8BBF29C3B1AD0097218D /* Info.plist */,
 				814F8BE129C3B1F40097218D /* LoginViewController.swift */,
+				814F8BE629C3BAE10097218D /* TelnyxClient.swift */,
 			);
 			path = TelnyxSample;
 			sourceTree = "<group>";
@@ -424,6 +427,7 @@
 				814F8BB629C3B1AB0097218D /* ViewController.swift in Sources */,
 				814F8BB229C3B1AB0097218D /* AppDelegate.swift in Sources */,
 				814F8BE529C3B21F0097218D /* LoginViewModel.swift in Sources */,
+				814F8BE729C3BAE10097218D /* TelnyxClient.swift in Sources */,
 				814F8BB429C3B1AB0097218D /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -610,6 +614,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -639,6 +644,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
