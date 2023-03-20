@@ -11,20 +11,27 @@ class LoginViewModel {
     weak var delegate: LoginViewModelDelegate?
     private var username: String?
     private var password: String?
-
+    var callManager: CallerManager
+    
     var appDelegate: AppDelegate {
         return UIApplication.shared.delegate as! AppDelegate
+    }
+    
+    init(callManager: CallerManager) {
+        self.callManager = callManager
     }
     
     func login(username: String?, password: String?) {
         self.username = username
         self.password = password
-        
-        let txConfig = TxConfig(sipUser: "MostafaElbaz1", password: "17HdvZVm", logLevel: .all)
-        
+                
         do {
 //            telnyxClient.delegate = self
-            try appDelegate.telnyxClient!.connect(txConfig: txConfig)
+//            try appDelegate.telnyxClient!.connect(txConfig: txConfig)
+            
+            callManager.login(username: "MostafaElbaz1", password: "17HdvZVm", completion: { [weak self] status in
+                self?.delegate?.loginSuccess()
+            })
         } catch let error {
             delegate?.loginFailed(error: error)
         }
@@ -32,3 +39,11 @@ class LoginViewModel {
 
 
 }
+
+//extension LoginViewModel: CallerManagerDelegate {
+//    func callerManagerDidLoginSuccessfully() {
+//        delegate?.loginSuccess()
+//    }
+//
+//
+//}

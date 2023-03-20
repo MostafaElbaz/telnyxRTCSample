@@ -70,80 +70,48 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "2C5DC49D-BE4D-45B7-B14F-2077034857EB"
+            uuid = "D95F8E19-3E05-4BAC-883B-0656FAF19A01"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "TelnyxSample/AppDelegate.swift"
+            filePath = "TelnyxSample/Views/CallerViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "194"
-            endingLineNumber = "194"
-            landmarkName = "newIncomingCall(from:uuid:)"
+            startingLineNumber = "79"
+            endingLineNumber = "79"
+            landmarkName = "onHangUpButtonTapped()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "CE00D045-2D57-4A54-9BB1-E1B0F9807E32"
+            uuid = "DC31D1D3-05CB-4C15-857C-548850E2B247"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "TelnyxSample/AppDelegate.swift"
+            filePath = "TelnyxSample/Views/CallerViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "221"
-            endingLineNumber = "221"
-            landmarkName = "newIncomingCall(from:uuid:)"
+            startingLineNumber = "92"
+            endingLineNumber = "92"
+            landmarkName = "receivingCallDidAnswer()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "A838C5ED-70B5-4590-9826-4FA911008A9B"
+            uuid = "5B274E93-E9C0-414C-8491-DDA2E5049D33"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "TelnyxSample/AppDelegate.swift"
+            filePath = "TelnyxSample/Views/CallerViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "229"
-            endingLineNumber = "229"
-            landmarkName = "executeAnswerCallAction(uuid:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "A1E1321C-D616-49F7-A048-728D04A9655C"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "TelnyxSample/AppDelegate.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "237"
-            endingLineNumber = "237"
-            landmarkName = "executeAnswerCallAction(uuid:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "C11806B6-D499-4BAE-9045-E2BF19AA74C0"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "TelnyxSample/AppDelegate.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "292"
-            endingLineNumber = "292"
-            landmarkName = "provider(_:perform:)"
+            startingLineNumber = "66"
+            endingLineNumber = "66"
+            landmarkName = "callSuccessful()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

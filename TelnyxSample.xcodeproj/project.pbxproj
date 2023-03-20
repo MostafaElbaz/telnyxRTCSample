@@ -20,7 +20,16 @@
 		814F8BD529C3B1AD0097218D /* TelnyxSampleUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 814F8BD429C3B1AD0097218D /* TelnyxSampleUITestsLaunchTests.swift */; };
 		814F8BE229C3B1F50097218D /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 814F8BE129C3B1F40097218D /* LoginViewController.swift */; };
 		814F8BE529C3B21F0097218D /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 814F8BE429C3B21F0097218D /* LoginViewModel.swift */; };
-		814F8BE729C3BAE10097218D /* TelnyxClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 814F8BE629C3BAE10097218D /* TelnyxClient.swift */; };
+		814F8BF129C704750097218D /* CallerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 814F8BEF29C704750097218D /* CallerViewController.swift */; };
+		814F8BF229C704750097218D /* CallerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 814F8BF029C704750097218D /* CallerViewController.xib */; };
+		814F8BF529C705D20097218D /* ReceivingCallViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 814F8BF329C705D20097218D /* ReceivingCallViewController.swift */; };
+		814F8BF629C705D20097218D /* ReceivingCallViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 814F8BF429C705D20097218D /* ReceivingCallViewController.xib */; };
+		814F8BF929C707040097218D /* OnCallViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 814F8BF729C707040097218D /* OnCallViewController.swift */; };
+		814F8BFA29C707040097218D /* OnCallViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 814F8BF829C707040097218D /* OnCallViewController.xib */; };
+		814F8BFC29C70B120097218D /* CallerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 814F8BFB29C70B120097218D /* CallerViewModel.swift */; };
+		814F8BFE29C71B050097218D /* ReceivingCallViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 814F8BFD29C71B050097218D /* ReceivingCallViewModel.swift */; };
+		814F8C0029C720440097218D /* OnCallViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 814F8BFF29C720440097218D /* OnCallViewModel.swift */; };
+		814F8C0229C749240097218D /* CallerManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 814F8C0129C749240097218D /* CallerManager.swift */; };
 		F1A6BFAFB48D1E1309F80F74 /* Pods_TelnyxSampleTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6C039ECBC5200758D4B90B39 /* Pods_TelnyxSampleTests.framework */; };
 /* End PBXBuildFile section */
 
@@ -65,7 +74,16 @@
 		814F8BD429C3B1AD0097218D /* TelnyxSampleUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TelnyxSampleUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		814F8BE129C3B1F40097218D /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		814F8BE429C3B21F0097218D /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
-		814F8BE629C3BAE10097218D /* TelnyxClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TelnyxClient.swift; sourceTree = "<group>"; };
+		814F8BEF29C704750097218D /* CallerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CallerViewController.swift; sourceTree = "<group>"; };
+		814F8BF029C704750097218D /* CallerViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CallerViewController.xib; sourceTree = "<group>"; };
+		814F8BF329C705D20097218D /* ReceivingCallViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReceivingCallViewController.swift; sourceTree = "<group>"; };
+		814F8BF429C705D20097218D /* ReceivingCallViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ReceivingCallViewController.xib; sourceTree = "<group>"; };
+		814F8BF729C707040097218D /* OnCallViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnCallViewController.swift; sourceTree = "<group>"; };
+		814F8BF829C707040097218D /* OnCallViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OnCallViewController.xib; sourceTree = "<group>"; };
+		814F8BFB29C70B120097218D /* CallerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CallerViewModel.swift; sourceTree = "<group>"; };
+		814F8BFD29C71B050097218D /* ReceivingCallViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReceivingCallViewModel.swift; sourceTree = "<group>"; };
+		814F8BFF29C720440097218D /* OnCallViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnCallViewModel.swift; sourceTree = "<group>"; };
+		814F8C0129C749240097218D /* CallerManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CallerManager.swift; sourceTree = "<group>"; };
 		BD50C2FF743A8AA131539D66 /* Pods-TelnyxSample-TelnyxSampleUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TelnyxSample-TelnyxSampleUITests.release.xcconfig"; path = "Target Support Files/Pods-TelnyxSample-TelnyxSampleUITests/Pods-TelnyxSample-TelnyxSampleUITests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -122,6 +140,7 @@
 		814F8BB029C3B1AB0097218D /* TelnyxSample */ = {
 			isa = PBXGroup;
 			children = (
+				814F8BE829C6FFC80097218D /* Views */,
 				814F8BE329C3B2090097218D /* ViewModel */,
 				814F8BB129C3B1AB0097218D /* AppDelegate.swift */,
 				814F8BB329C3B1AB0097218D /* SceneDelegate.swift */,
@@ -130,8 +149,7 @@
 				814F8BBA29C3B1AD0097218D /* Assets.xcassets */,
 				814F8BBC29C3B1AD0097218D /* LaunchScreen.storyboard */,
 				814F8BBF29C3B1AD0097218D /* Info.plist */,
-				814F8BE129C3B1F40097218D /* LoginViewController.swift */,
-				814F8BE629C3BAE10097218D /* TelnyxClient.swift */,
+				814F8C0129C749240097218D /* CallerManager.swift */,
 			);
 			path = TelnyxSample;
 			sourceTree = "<group>";
@@ -157,8 +175,25 @@
 			isa = PBXGroup;
 			children = (
 				814F8BE429C3B21F0097218D /* LoginViewModel.swift */,
+				814F8BFB29C70B120097218D /* CallerViewModel.swift */,
+				814F8BFD29C71B050097218D /* ReceivingCallViewModel.swift */,
+				814F8BFF29C720440097218D /* OnCallViewModel.swift */,
 			);
 			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		814F8BE829C6FFC80097218D /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				814F8BE129C3B1F40097218D /* LoginViewController.swift */,
+				814F8BEF29C704750097218D /* CallerViewController.swift */,
+				814F8BF029C704750097218D /* CallerViewController.xib */,
+				814F8BF329C705D20097218D /* ReceivingCallViewController.swift */,
+				814F8BF429C705D20097218D /* ReceivingCallViewController.xib */,
+				814F8BF729C707040097218D /* OnCallViewController.swift */,
+				814F8BF829C707040097218D /* OnCallViewController.xib */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 		9A56DB18D3C198275402B858 /* Frameworks */ = {
@@ -294,7 +329,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				814F8BBE29C3B1AD0097218D /* LaunchScreen.storyboard in Resources */,
+				814F8BFA29C707040097218D /* OnCallViewController.xib in Resources */,
+				814F8BF629C705D20097218D /* ReceivingCallViewController.xib in Resources */,
 				814F8BBB29C3B1AD0097218D /* Assets.xcassets in Resources */,
+				814F8BF229C704750097218D /* CallerViewController.xib in Resources */,
 				814F8BB929C3B1AB0097218D /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -424,11 +462,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				814F8BE229C3B1F50097218D /* LoginViewController.swift in Sources */,
+				814F8C0029C720440097218D /* OnCallViewModel.swift in Sources */,
 				814F8BB629C3B1AB0097218D /* ViewController.swift in Sources */,
 				814F8BB229C3B1AB0097218D /* AppDelegate.swift in Sources */,
 				814F8BE529C3B21F0097218D /* LoginViewModel.swift in Sources */,
-				814F8BE729C3BAE10097218D /* TelnyxClient.swift in Sources */,
+				814F8BFC29C70B120097218D /* CallerViewModel.swift in Sources */,
+				814F8BFE29C71B050097218D /* ReceivingCallViewModel.swift in Sources */,
+				814F8BF129C704750097218D /* CallerViewController.swift in Sources */,
+				814F8BF929C707040097218D /* OnCallViewController.swift in Sources */,
 				814F8BB429C3B1AB0097218D /* SceneDelegate.swift in Sources */,
+				814F8C0229C749240097218D /* CallerManager.swift in Sources */,
+				814F8BF529C705D20097218D /* ReceivingCallViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
