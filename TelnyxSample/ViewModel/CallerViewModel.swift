@@ -9,17 +9,18 @@ import Foundation
 import UIKit
 
 protocol CallerViewModelDelegate: AnyObject {
-    func callSuccessful()
+    func callSuccessful(callerName: String)
     func callFailed(error: Error)
     func didReceiveCall(callerName: String)
+    func didEndCall()
 }
 
 
 class CallerViewModel {
     weak var delegate: CallerViewModelDelegate?
-    let callManager: CallerManager
+    var callManager: CallerManagerProtocol
     
-    init(delegate: CallerViewModelDelegate? = nil, callManager: CallerManager) {
+    init(delegate: CallerViewModelDelegate? = nil, callManager: CallerManagerProtocol) {
         self.delegate = delegate
         self.callManager = callManager
         self.callManager.delegate = self
@@ -27,31 +28,28 @@ class CallerViewModel {
     
 
     func makeCall(destinationNumber: String) {
+        callManager.executeStartCallAction(destinationNumber: destinationNumber, uuid: UUID(), handle: "TelnyxSample")
         
-        callManager.executeStartCallAction(uuid: UUID(), handle: "Test")
-        delegate?.callSuccessful()
-        // make a call with the destination number
-        // using the telnyx client
     }
     
     func hangout() {
-        
         callManager.executeEndCallAction(uuid: UUID())
-//        delegate?.
-        // make a call with the destination number
-        // using the telnyx client
     }
     
     func answer() {
-        
         callManager.executeAnswerCallAction(uuid: UUID())
-//        delegate?.
-        // make a call with the destination number
-        // using the telnyx client
     }
 }
 
 extension CallerViewModel: CallerManagerDelegate {
+    func didEndCall() {
+        delegate?.didEndCall()
+    }
+    
+    func didStartCall(callerName: String) {
+        delegate?.callSuccessful(callerName: callerName)
+    }
+    
     func didReceiveCall(callerName: String) {
         self.delegate?.didReceiveCall(callerName: callerName)
     }

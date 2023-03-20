@@ -12,9 +12,20 @@ import AVFoundation
 
 protocol CallerManagerDelegate: AnyObject {
     func didReceiveCall(callerName: String)
+    func didStartCall(callerName: String)
+    func didEndCall()
+
 }
 
-class CallerManager: NSObject {
+protocol CallerManagerProtocol {
+    func login(username: String, password: String, completion: @escaping (Bool) -> Void)
+    var delegate: CallerManagerDelegate? { get set }
+    func executeEndCallAction(uuid: UUID)
+    func executeAnswerCallAction(uuid: UUID)
+    func executeStartCallAction(destinationNumber: String, uuid: UUID, handle: String)
+}
+
+class CallerManager: NSObject, CallerManagerProtocol {
     
     private let telnyxClient: TxClient
     var currentCall: Call?
@@ -152,10 +163,11 @@ extension CallerManager: TxClientDelegate {
 //        self.voipDelegate?.onCallStateUpdated(callState: callState, callId: callId)
         
         if callState == .DONE {
-            if let currentCallId = self.currentCall?.callInfo?.callId,
-               currentCallId == callId {
+//            if let currentCallId = self.currentCall?.callInfo?.callId,
+//               currentCallId == callId {
                 self.currentCall = nil // clear current call
-            }
+                delegate?.didEndCall()
+//            }
         }
     }
 }
@@ -168,7 +180,7 @@ extension CallerManager: CXProviderDelegate {
     /// - Parameters:
     ///   - uuid: The UUID of the outbound call
     ///   - handle: A handle for this call
-    func executeStartCallAction(uuid: UUID, handle: String) {
+    func executeStartCallAction(destinationNumber: String, uuid: UUID, handle: String) {
         guard let provider = callKitProvider else {
             print("CallKit provider not available")
             return
@@ -178,7 +190,7 @@ extension CallerManager: CXProviderDelegate {
         let startCallAction = CXStartCallAction(call: uuid, handle: callHandle)
         let transaction = CXTransaction(action: startCallAction)
 
-        callKitCallController.request(transaction) { error in
+        callKitCallController.request(transaction) { [weak self] error in
             if let error = error {
                 print("StartCallAction transaction request failed: \(error.localizedDescription)")
                 return
@@ -195,6 +207,10 @@ extension CallerManager: CXProviderDelegate {
             callUpdate.supportsUngrouping = false
             callUpdate.hasVideo = false
             provider.reportCall(with: uuid, updated: callUpdate)
+            self?.callKitUUID = uuid
+
+            self?.makeCall(destinationNumber: destinationNumber)
+            self?.delegate?.didStartCall(callerName: destinationNumber)
         }
     }
 
@@ -226,6 +242,7 @@ extension CallerManager: CXProviderDelegate {
             } else {
                 print("AppDelegate:: Incoming call successfully reported.")
                 
+                self?.callKitUUID = uuid
                 self?.delegate?.didReceiveCall(callerName: from)
             }
         }
@@ -313,6 +330,7 @@ extension CallerManager: CXProviderDelegate {
     func provider(_ provider: CXProvider, perform action: CXAnswerCallAction) {
         print("AppDelegate:: ANSWER call action: callKitUUID [\(String(describing: self.callKitUUID))] action [\(action.callUUID)]")
         self.currentCall?.answer()
+        delegate?.didStartCall(callerName: self.currentCall?.callInfo?.callerName ?? "unknowm")
         action.fulfill()
     }
 

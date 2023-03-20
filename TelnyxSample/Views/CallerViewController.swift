@@ -10,6 +10,8 @@ import UIKit
 class CallerViewController: UIViewController {
 
     private var viewModel: CallerViewModel!
+    var onCallViewController: OnCallViewController?
+    var receivingCallViewController: ReceivingCallViewController?
     
     @IBOutlet weak var destinationTextField: UITextField!
     
@@ -37,12 +39,13 @@ class CallerViewController: UIViewController {
         viewModel.makeCall(destinationNumber: destinationNumber)
     }
 
-    func receiveCall() {
-        let receivingCallViewController = ReceivingCallViewController()
-        receivingCallViewController.modalPresentationStyle = .overFullScreen
-        receivingCallViewController.modalTransitionStyle = .crossDissolve
-        receivingCallViewController.delegate = self
-        self.present(receivingCallViewController, animated: true, completion: nil)
+    func receiveCall(callerName: String) {
+        receivingCallViewController = ReceivingCallViewController()
+        receivingCallViewController?.modalPresentationStyle = .overFullScreen
+        receivingCallViewController?.modalTransitionStyle = .crossDissolve
+        receivingCallViewController?.delegate = self
+        receivingCallViewController?.viewModel = ReceivingCallViewModel(callerName: callerName)
+        self.present(receivingCallViewController!, animated: true, completion: nil)
 
     }
     /*
@@ -55,24 +58,46 @@ class CallerViewController: UIViewController {
     }
     */
 
+    func showOnCallView(callerName: String) {
+        self.onCallViewController = OnCallViewController()
+        self.onCallViewController?.modalPresentationStyle = .overFullScreen
+        self.onCallViewController?.modalTransitionStyle = .crossDissolve
+        self.onCallViewController?.delegate = self
+        let onCallViewModel = OnCallViewModel(callerName: callerName)
+
+        self.onCallViewController?.viewModel = OnCallViewModel(callerName: callerName)
+        self.present(self.onCallViewController!, animated: true, completion: nil)
+    }
+    
 }
 
 extension CallerViewController: CallerViewModelDelegate {
-    func didReceiveCall(callerName: String) {
-        receiveCall()
+    fileprivate func resetView() {
+        onCallViewController = nil
+        receivingCallViewController = nil
     }
     
-    func callSuccessful() {
-        let onCallViewController = OnCallViewController()
-        onCallViewController.modalPresentationStyle = .overFullScreen
-        onCallViewController.modalTransitionStyle = .crossDissolve
-        onCallViewController.delegate = self
-        onCallViewController.viewModel = OnCallViewModel(callerName: "NAME")
-        self.present(onCallViewController, animated: true, completion: nil)
+    func didEndCall() {
+        onCallViewController?.dismiss(animated: true)
+        receivingCallViewController?.dismiss(animated: true)
+        
+        resetView()
+    }
+    
+    func didReceiveCall(callerName: String) {
+        receiveCall(callerName: callerName)
+    }
+    
+    func callSuccessful(callerName: String) {
+        DispatchQueue.main.async { [weak self] in
+            guard let self = self else {return}
+            self.receivingCallViewController?.dismiss(animated: true)
+            self.showOnCallView(callerName: callerName)
+        }
     }
     
     func callFailed(error: Error) {
-        // Handle the call failure
+        resetView()
     }
 }
 
@@ -89,8 +114,6 @@ extension CallerViewController: OnCallViewControllerDelegate {
 extension CallerViewController: ReceivingCallDelegate {
     func receivingCallDidAnswer() {
         viewModel.answer()
-        callSuccessful()
-
     }
     
     func receivingCallDidReject() {

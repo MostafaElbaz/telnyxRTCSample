@@ -13,28 +13,20 @@ protocol ReceivingCallViewModelDelegate: AnyObject {
 }
 
 class ReceivingCallViewModel {
-//    private let call: Call
     weak var delegate: ReceivingCallViewModelDelegate?
 
-//    init(call: Call) {
-//        self.call = call
-//    }
-
-    var callerName: String {
-        return "call.remoteNumber"
+    var callerName: String
+    
+    init(delegate: ReceivingCallViewModelDelegate? = nil, callerName: String) {
+        self.delegate = delegate
+        self.callerName = callerName
     }
-
-//    var callState: CallState {
-//        return call.state
-//    }
-
+    
     func answerCall() {
-//        call.answer()
         delegate?.onAnswerCall()
     }
 
     func rejectCall() {
-//        call.reject()
         delegate?.onRejectCall()
     }
 }

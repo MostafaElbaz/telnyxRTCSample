@@ -15,7 +15,6 @@
 		814F8BB929C3B1AB0097218D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 814F8BB729C3B1AB0097218D /* Main.storyboard */; };
 		814F8BBB29C3B1AD0097218D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 814F8BBA29C3B1AD0097218D /* Assets.xcassets */; };
 		814F8BBE29C3B1AD0097218D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 814F8BBC29C3B1AD0097218D /* LaunchScreen.storyboard */; };
-		814F8BC929C3B1AD0097218D /* TelnyxSampleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 814F8BC829C3B1AD0097218D /* TelnyxSampleTests.swift */; };
 		814F8BD329C3B1AD0097218D /* TelnyxSampleUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 814F8BD229C3B1AD0097218D /* TelnyxSampleUITests.swift */; };
 		814F8BD529C3B1AD0097218D /* TelnyxSampleUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 814F8BD429C3B1AD0097218D /* TelnyxSampleUITestsLaunchTests.swift */; };
 		814F8BE229C3B1F50097218D /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 814F8BE129C3B1F40097218D /* LoginViewController.swift */; };
@@ -68,7 +67,6 @@
 		814F8BBD29C3B1AD0097218D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		814F8BBF29C3B1AD0097218D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		814F8BC429C3B1AD0097218D /* TelnyxSampleTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TelnyxSampleTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		814F8BC829C3B1AD0097218D /* TelnyxSampleTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TelnyxSampleTests.swift; sourceTree = "<group>"; };
 		814F8BCE29C3B1AD0097218D /* TelnyxSampleUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TelnyxSampleUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		814F8BD229C3B1AD0097218D /* TelnyxSampleUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TelnyxSampleUITests.swift; sourceTree = "<group>"; };
 		814F8BD429C3B1AD0097218D /* TelnyxSampleUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TelnyxSampleUITestsLaunchTests.swift; sourceTree = "<group>"; };
@@ -157,7 +155,6 @@
 		814F8BC729C3B1AD0097218D /* TelnyxSampleTests */ = {
 			isa = PBXGroup;
 			children = (
-				814F8BC829C3B1AD0097218D /* TelnyxSampleTests.swift */,
 			);
 			path = TelnyxSampleTests;
 			sourceTree = "<group>";
@@ -480,7 +477,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				814F8BC929C3B1AD0097218D /* TelnyxSampleTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -710,8 +706,9 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 7XCFN9X486;
 				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.vodafone.TelnyxSampleTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -730,8 +727,9 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 7XCFN9X486;
 				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.vodafone.TelnyxSampleTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -749,6 +747,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 7XCFN9X486;
 				GENERATE_INFOPLIST_FILE = YES;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.vodafone.TelnyxSampleUITests;
@@ -767,6 +766,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 7XCFN9X486;
 				GENERATE_INFOPLIST_FILE = YES;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.vodafone.TelnyxSampleUITests;

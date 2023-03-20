@@ -15,11 +15,12 @@ protocol ReceivingCallDelegate: AnyObject {
 class ReceivingCallViewController: UIViewController {
     @IBOutlet weak var callerNameLabel: UILabel!
     weak var delegate: ReceivingCallDelegate?
+    var viewModel: ReceivingCallViewModel?
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        callerNameLabel.text = "viewModel.callerName"
+        callerNameLabel.text = viewModel?.callerName ?? "unknown"
 
     }
     

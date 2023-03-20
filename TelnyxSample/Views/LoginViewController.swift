@@ -25,20 +25,36 @@ class LoginViewController: UIViewController {
     }
     
     @IBAction func loginButtonTapped(_ sender: Any) {
-        guard let username = usernameTextField.text, !username.isEmpty,
-              let password = passwordTextField.text, !password.isEmpty else {
-            print("Username or password is empty")
-            return
-        }
-        
+      
+        guard let username = usernameTextField.text, !username.isEmpty else {
+               showAlert(title: "Error", message: "Please enter a username")
+               return
+           }
+           guard let password = passwordTextField.text, !password.isEmpty else {
+               showAlert(title: "Error", message: "Please enter a password")
+               return
+           }
+           
         // Call the view model's login function
         viewModel.login(username: username, password: password)
         
     }
+    private func showAlert(title: String, message: String) {
+        let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        let okAction = UIAlertAction(title: "OK", style: .default, handler: nil)
+        alert.addAction(okAction)
+        present(alert, animated: true, completion: nil)
+    }
 }
+
 
 // MARK: - LoginViewModelDelegate
 extension LoginViewController: LoginViewModelDelegate {
+    func loginFailed(error: String) {
+        print("loginFailed")
+
+    }
+    
     func loginSuccess() {
         DispatchQueue.main.async { [weak self] in
             guard let self = self else { return }
